@@ -9,6 +9,7 @@ $(document).ready(() => {
 function getMovies(searchText){
   axios.get('http://www.omdbapi.com?apikey=5f069f9b&s='+searchText)
     .then((response) => {
+      let movies = response.data.Search;
       let output = '';
       $.each(movies, (index, movie) => {
         output += `
